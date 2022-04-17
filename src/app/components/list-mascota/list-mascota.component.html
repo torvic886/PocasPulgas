@@ -1,0 +1,39 @@
+<div class="container" style="filter:alpha(opacity=50); opacity:0.8;">
+  <div class="card">
+    <div class="card-body">
+      <span class="h3">Listado De Mascotas</span>
+      <img class="img-fluid" src='./assets/Imagenes/iconoMascotas.jpg' />
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="text" class="btn btn-outline-primary btn-lg btn-space" routerLink='/administracion'>Volver</button>
+        <button class="btn btn-outline-dark btn-lg" routerLink='/create-mascota'>Agregar</button>
+      </div>
+      <h5 style="margin-top: 30px;" *ngIf="mascotas.length == 0">No Hay Datos Para Mostrar</h5>
+      <table *ngIf='mascotas.length > 0' class="table table-striped mt-5">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Color</th>
+            <th>fecha Nacimiento</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let mascota of mascotas">
+            <td>{{mascota.nombre}}</td>
+            <td>{{mascota.tipo}}</td>
+            <td>{{mascota.color}}</td>
+            <td>{{mascota.fechaNacimiento}}</td>
+            <td>
+              <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editMascota/', mascota.id]"></i>
+
+              <i (click)="eliminarMascota(mascota.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+            </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

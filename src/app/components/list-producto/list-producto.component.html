@@ -1,0 +1,43 @@
+<div class="container" style="filter:alpha(opacity=50); opacity:0.8;">
+    <div class="card">
+      <div class="card-body">
+        <span class="h3">Listado De Productos</span>
+        <img class="img-fluid" src='./assets/Imagenes/estar.png'/>
+  
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="text" class="btn btn-outline-primary btn-lg btn-space" routerLink='/administracion'>Volver</button>
+          <button class="btn btn-outline-dark btn-lg" routerLink='/create-producto'>Agregar</button>
+        </div>
+        <h5 style="margin-top: 30px;" *ngIf="productos.length == 0">No Hay Datos Para Mostrar</h5>
+        <table *ngIf='productos.length > 0' class="table table-striped mt-5">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Tipo</th>
+              <th>Costo</th>
+              <th>Descripcion</th>
+              <th>Fecha De Vencimiento</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of productos">
+              <td>{{producto.nombre}}</td>
+              <td>{{producto.tipo}}</td>
+              <td>{{producto.costo}}</td>
+              <td>{{producto.descripcion}}</td>
+              <td>{{producto.fechaVencimiento}}</td>
+              <td>
+                <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editProducto/', producto.id]"></i>
+  
+                <i (click)="eliminarProducto(producto.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+              </td>
+  
+            </tr>
+  
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+

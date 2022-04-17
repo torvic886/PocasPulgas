@@ -1,0 +1,41 @@
+<div class="container" style="filter:alpha(opacity=50); opacity:0.8;">
+    <div class="card">
+      <div class="card-body">
+        <span class="h3">Listado De Articulos</span>
+        <img class="img-fluid" src='./assets/Imagenes/clasificacion.png'/>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="text" class="btn btn-outline-primary btn-lg btn-space" routerLink='/administracion'>Volver</button>
+          <button class="btn btn-outline-dark btn-lg" routerLink='/create-articulo'>Agregar</button>
+        </div>
+        <h5 style="margin-top: 30px;" *ngIf="articulos.length == 0">No Hay Datos Para Mostrar</h5>
+        <table *ngIf='articulos.length > 0' class="table table-striped mt-5">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Descripcion</th>
+              <th>Cantidad</th>
+              <th>Tipo</th>
+              <th>Tipo</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let articulo of articulos">
+              <td>{{articulo.nombre}}</td>
+              <td>{{articulo.precio}}</td>
+              <td>{{articulo.descripcion}}</td>
+              <td>{{articulo.cantidad}}</td>
+              <td>{{articulo.tipo}}</td>
+              <td>{{articulo.imagen}}</td>
+              <td>
+                <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editArticulo/', articulo.id]"></i>
+  
+                <i (click)="eliminarArticulo(articulo.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
