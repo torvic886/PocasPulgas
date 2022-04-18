@@ -41,7 +41,7 @@ export class RegisterUserComponent implements OnInit {
     {
       rta.user?.sendEmailVerification();
       this.toastr.success('Enviamos un correo electronico para verificar su cuenta!', 'Usuario registrado!');
-      this.router.navigate(['/login'])
+      this.router.navigate(['/catalogo-producto'])
     })
     .catch(error => 
     {
