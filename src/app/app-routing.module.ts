@@ -25,8 +25,8 @@ import { ListArticuloComponent } from './components/list-articulo/list-articulo.
 
 const routes: Routes = [
   
-  {path: '', component: LoginInicioComponent },
-  { path: '', redirectTo: 'login-inicio', pathMatch: 'full' },
+  {path: '', component: CatalogoProductoComponent },
+  { path: '', redirectTo: 'catalogo-producto', pathMatch: 'full' },
   {path: 'administracion',component: AdministracionComponent},
   { path: 'list-articulo', component: ListArticuloComponent },
   { path: 'list-empleado', component: ListEmpleadoComponent },
@@ -54,8 +54,8 @@ const routes: Routes = [
   {path: 'editMascota/:id', component: CreateMascotaComponent},
   {path: 'editProducto/:id', component: CreateProductoComponent},
   {path: 'editServicio/:id', component: CreateServicioComponent},
-  { path: '', redirectTo: 'list-empleado', pathMatch: 'full' },
-  { path: '**', redirectTo: 'list-empleado', pathMatch: 'full' }
+  { path: '', redirectTo: 'catalogo-producto', pathMatch: 'full' },
+  { path: '**', redirectTo: 'catalogo-producto', pathMatch: 'full' }
 ];
 
 @NgModule({
