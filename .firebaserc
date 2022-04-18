@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "quizz-975f6": {
+      "hosting": {
+        "CarePet": [
+          "quizz-975f6"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "quizz-975f6"
+  }
+}
