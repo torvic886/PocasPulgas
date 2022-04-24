@@ -7,13 +7,22 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CatalogoProductoComponent implements OnInit 
 {
-  titulo = 'Victor';
+
+
  
 
-  constructor() { }
+  constructor() 
+  { 
+  }
 
   ngOnInit(): void 
   {
+  }
+
+
+  clickAddTodo() 
+  {
+    alert('hola!');
   }
 
 }

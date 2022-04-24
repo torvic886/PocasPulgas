@@ -2,9 +2,13 @@
 @import '~ngx-toastr/toastr';
 body
 {
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('./assets/Imagenes/fondo1.jpg');
-    background-image: url('./assets/Imagenes/fondo1.jpg');
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('./assets/Imagenes/fondo.jpg');
+    background-image: url('./assets/Imagenes/fondo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+}
+
+.jumbotron {
+    background-color: #ced4daba!important;
 }

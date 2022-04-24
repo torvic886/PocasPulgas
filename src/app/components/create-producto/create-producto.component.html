@@ -10,10 +10,11 @@
                     </h3>
                     <span *ngIf="submitted && createProducto.invalid">Todos los campos son obligatorios</span>
                     <form class="mt-4" [formGroup]="createProducto" (ngSubmit)="agregarEditarProducto()">
-                       
+
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control form-control-lg" formControlName="nombre" placeholder="Nombre">
+                                <input type="text" class="form-control form-control-lg" formControlName="nombre"
+                                    placeholder="Nombre">
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control form-control-lg" formControlName="tipo"
@@ -25,18 +26,16 @@
                             <input type="text" class="form-control form-control-lg mt-3" formControlName="costo"
                                 placeholder="Costo">
                         </div>
-                        
+                        <div class="col">
+                            <input type="text" class="form-control form-control-lg mt-3" formControlName="descripcion"
+                                placeholder="Descripcion">
+                        </div>
 
-                            <div class="col">
-                                <input type="text" class="form-control form-control-lg mt-3" formControlName="descripcion"
-                                    placeholder="Descripcion">
-                            </div>
-                            
-                            <div class="col">
-                                <label>Fecha Vencimiento</label>
-                                <input type="date" class="form-control form-control-lg mt-3"
-                                    formControlName="fechaVencimiento" placeholder="Fecha Vencimiento ">
-                            </div>
+                        <div class="col">
+                            <label>Fecha Vencimiento</label>
+                            <input type="date" class="form-control form-control-lg mt-3"
+                                formControlName="fechaVencimiento" placeholder="Fecha Vencimiento ">
+                        </div>
 
                         <div class="mt-3">
                             <button type="text" class="btn btn-secondary btn-lg btn-space"
@@ -45,7 +44,6 @@
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
