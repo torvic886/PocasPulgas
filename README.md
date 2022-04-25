@@ -33,7 +33,6 @@ La aplicación se recargará automáticamente si cambia alguno de los archivos d
 
 1. Ejecute `ng build` para compilar el proyecto. Los artefactos de compilación se almacenarán en el directorio `dist/`.
 
-
 2. Una vez culminado el proyecto, puedes hacer el despliegue con Firebase Hosting
    en el siguiente enlace se muestra como es el proceso
 (https://firebase.google.com/docs/hosting/quickstart?hl=es-419)
