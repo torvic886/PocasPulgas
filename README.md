@@ -7,7 +7,8 @@ en usted y su mascota como parte de la familia.._
 ![PocasPulgas]
 (https://recordit.co/9viScbw4XB)
 
-(https://ibb.co/r79qpjS)
+![alt text](https://ibb.co/r79qpjS)
+
 
 Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 13.0.2.
 
