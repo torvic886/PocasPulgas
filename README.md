@@ -7,11 +7,9 @@ en usted y su mascota como parte de la familia.._
 ![PocasPulgas]
 (https://recordit.co/9viScbw4XB)
 
+(https://ibb.co/r79qpjS)
+
 Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 13.0.2.
-
-## Ejecutando pruebas unitarias
-
-Ejecute `ng test` para ejecutar las pruebas unitarias a través de [Karma](https://karma-runner.github.io).
 
 ## 🚀 Instalación
 1. Clona este proyecto.
@@ -29,6 +27,10 @@ Ejecute `ng test` para ejecutar las pruebas unitarias a través de [Karma](https
 
 Ejecute `ng serve` para un servidor de desarrollo. Navegue a `http://localhost:4200/`. 
 La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
+
+## Ejecutando pruebas unitarias
+
+Ejecute `ng test` para ejecutar las pruebas unitarias a través de [Karma](https://karma-runner.github.io).
 
 ## 🛠 Despliegue
 
