@@ -14,6 +14,19 @@ export class Categoria
    }
 
 
+   getCategoriaId(): string 
+    {
+      return `${this.categoria_id}`;
+    }
+  
+    getCategoriaName(): string 
+    {
+      return `${this.categoria_name}`
+    }
 
- 
+    getCategoriaTipo(): string 
+    {
+      return `${this.categoria_tipo}`
+    }
+
 }
