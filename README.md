@@ -6,6 +6,10 @@ en usted y su mascota como parte de la familia.._
 
 <img width="948" alt="ImgProyecto" src="https://user-images.githubusercontent.com/69951104/165021877-ae4bcb72-1795-4625-bc75-8548b676087a.PNG">
 
+Vista Proyecto
+https://recordit.co/9viScbw4XB
+
+Reglas De Negocio
 https://recordit.co/rF0ECRYxBQ
 
 
