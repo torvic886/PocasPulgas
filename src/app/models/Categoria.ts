@@ -13,7 +13,7 @@ export class Categoria
     this.categoria_tipo = categoria_tipo;
    }
 
-   //prueba sourcetree 2.0
+   //prueba sourcetree 3.0
    getCategoriaId(): string 
     {
       return `${this.categoria_id}`;
