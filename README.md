@@ -16,7 +16,7 @@ https://recordit.co/rF0ECRYxBQ
 Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 13.0.2.
 
 ## 🚀 Instalación
-1. Clona este proyecto.
+1. Clona este proyecto usando el comando `git clone https://github.com/torvic886/PocasPulgas.git`
 
 2. Ve a la carpeta del proyecto
 `cd PocasPulgas`
