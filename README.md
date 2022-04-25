@@ -4,7 +4,7 @@ _Para nosotros es importante la salud y el bienestar de su mascota,
 por ello prestamos un servicio clínico y médico de calidad pensando 
 en usted y su mascota como parte de la familia.._
 
-![PocasPulgas](https://ibb.co/r79qpjS)
+![PocasPulgas](https://recordit.co/9viScbw4XB)
 
 Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 13.0.2.
 
