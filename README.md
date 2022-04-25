@@ -7,8 +7,9 @@ en usted y su mascota como parte de la familia.._
 ![PocasPulgas]
 (https://recordit.co/9viScbw4XB)
 
-![PocasPulgas](https://ibb.co/r79qpjS)
+![pokedex_demo](http://g.recordit.co/Umv3xbqZmk.gif)
 
+![alt text](http://url/to/fondo.png)
 
 Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 13.0.2.
 
