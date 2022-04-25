@@ -1,27 +1,48 @@
-# PocasPulgas
+# PocasPulgas ![Status badge](https://img.shields.io/badge/status-in%20progress-yellow)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
+_Para nosotros es importante la salud y el bienestar de su mascota, 
+por ello prestamos un servicio clínico y médico de calidad pensando 
+en usted y su mascota como parte de la familia.._
 
-## Development server
+![PocasPulgas](https://ibb.co/r79qpjS)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 13.0.2.
 
-## Code scaffolding
+## Ejecutando pruebas unitarias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecute `ng test` para ejecutar las pruebas unitarias a través de [Karma](https://karma-runner.github.io).
 
-## Build
+## 🚀 Instalación
+1. Clona este proyecto.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Ve a la carpeta del proyecto
+`cd PocasPulgas`
 
-## Running unit tests
+3. Instala las dependencias
+`npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Corre el ambiente local
+`ng s -o`
 
-## Running end-to-end tests
+## Servidor de desarrollo
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Ejecute `ng serve` para un servidor de desarrollo. Navegue a `http://localhost:4200/`. 
+La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
 
-## Further help
+## 🛠 Despliegue
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Ejecute `ng build` para compilar el proyecto. Los artefactos de compilación se almacenarán en el directorio `dist/`.
+
+
+2. Una vez culminado el proyecto, puedes hacer el despliegue con Firebase Hosting
+   en el siguiente enlace se muestra como es el proceso
+(https://firebase.google.com/docs/hosting/quickstart?hl=es-419)
+
+## 🦀 Base de Datos PocasPulgas
+Firebase Base de datos NoSql
+
+## 🧾 License
+Víctor Gutíerrez
+
+## ✨ Agradecimientos
+* A mi hijo Juan por inspirarme a realizar este proyecto.
