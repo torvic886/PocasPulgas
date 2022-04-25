@@ -4,8 +4,7 @@ _Para nosotros es importante la salud y el bienestar de su mascota,
 por ello prestamos un servicio clínico y médico de calidad pensando 
 en usted y su mascota como parte de la familia.._
 
-![PocasPulgas]
-(https://recordit.co/9viScbw4XB)
+![PocasPulgas](https://recordit.co/9viScbw4XB)
 
 ![pokedex_demo](http://g.recordit.co/Umv3xbqZmk.gif)
 
