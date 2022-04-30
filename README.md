@@ -12,6 +12,8 @@ https://recordit.co/9viScbw4XB
 Reglas De Negocio
 https://recordit.co/rF0ECRYxBQ
 
+Video Explicativo
+https://youtu.be/YeRhdgFcLp0
 
 Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 13.0.2.
 
