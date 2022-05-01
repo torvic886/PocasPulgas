@@ -45,6 +45,7 @@ import { ListServicioComponent } from './components/list-servicio/list-servicio.
 import { CreateArticuloComponent } from './components/create-articulo/create-articulo.component';
 import { ListArticuloComponent } from './components/list-articulo/list-articulo.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,7 +83,8 @@ import { ListArticuloComponent } from './components/list-articulo/list-articulo.
     AngularFireAuthModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFirestoreModule
   ],
   providers: [
     ScreenTrackingService, UserTrackingService

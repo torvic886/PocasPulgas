@@ -32,6 +32,9 @@ export class LoginComponent implements OnInit {
   }
   login() {
     console.log(this.loginForm)
+
+    console.log('Emailll:',this.afAuth.signInWithEmailAndPassword);
+
     const usuario = this.loginForm.get('usuario')?.value;
     const password = this.loginForm.get('password')?.value;
 

@@ -29,7 +29,8 @@ export class CreateClienteComponent implements OnInit
       nombre: ['', Validators.required],
       documento: ['', Validators.required],
       direccion: ['', Validators.required],
-      correo: ['', Validators.required]
+      correo: ['', Validators.required],
+      password: ['', Validators.required]
     })
     this.id = this.aRoute.snapshot.paramMap.get('id');
     console.log(this.id)
@@ -69,6 +70,7 @@ export class CreateClienteComponent implements OnInit
       documento: this.createCliente.value.documento,
       direccion: this.createCliente.value.direccion,
       correo: this.createCliente.value.correo,
+      password: this.createCliente.value.password,
       fechaCreacion : new Date(),
       fechaActualizacion: new Date()
     }
@@ -97,6 +99,7 @@ export class CreateClienteComponent implements OnInit
       documento: this.createCliente.value.documento,
       direccion: this.createCliente.value.direccion,
       correo: this.createCliente.value.correo,
+      password: this.createCliente.value.password,
       fechaActualizacion: new Date()
     }
 
@@ -122,7 +125,6 @@ export class CreateClienteComponent implements OnInit
       this.loading = true;
       this.clienteService.getCliente_(this.id).subscribe(data => 
       {
-        
         this.loading = false;
        
         this.createCliente.setValue(
@@ -130,7 +132,8 @@ export class CreateClienteComponent implements OnInit
           nombre: data.payload.data()['nombre'],
           documento: data.payload.data()['documento'],
           direccion: data.payload.data()['direccion'],
-          correo: data.payload.data()['correo']
+          correo: data.payload.data()['correo'],
+          password: data.payload.data()['password']
 
         })
       })

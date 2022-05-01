@@ -49,6 +49,10 @@ export class EmpleadoService
   {
     return this.firestore.collection('clientes').doc(id).snapshotChanges();
   }
+  getClientex_(): Observable<any>
+  {
+    return this.firestore.collection('clientes').snapshotChanges();
+  }
   actualizarCliente(id: string, data:any): Promise<any>
   {
     return this.firestore.collection('clientes').doc(id).update(data);
