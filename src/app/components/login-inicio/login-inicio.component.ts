@@ -55,11 +55,15 @@ export class LoginInicioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {
+  login() 
+  {
     const usuario = this.loginInicioForm.get('usuario')?.value;
     const password = this.loginInicioForm.get('password')?.value;
+
     const auth = getAuth();
     const user = auth.currentUser;
+
+    //console.log('WWWWW',user?.email);
 
     this.afs.collection('clientes', ref => ref.where('correo', '==', usuario)).snapshotChanges().subscribe((element) => {
       this.empleados = [];
@@ -69,27 +73,58 @@ export class LoginInicioComponent implements OnInit {
           correo: datosTarea.payload.doc.data().correo,
           password: datosTarea.payload.doc.data().password
         });
-        if (usuario == this.empleados[0].correo) {
+        if (usuario == this.empleados[0].correo && password == this.empleados[0].password ) 
+        {
           this.router.navigate(['/catalogo-producto'])
         }
-        else {
+        else 
+        {
+          //this.toastr.warning(this._errorService.error('oeoeeoeo'), 'Error')
           this.loginInicioForm.reset();
         }
         this.loading = false;
 
       })
     })
+   // console.log('USUARIO:',usuario);
+   // console.log('PASSWORD:',password);
+  //  console.log('USUARIO2:',user?.email);
 
-    if ((usuario == user?.email) && (this.flag == user?.emailVerified) && (user !== null)) {
+
+    this.afAuth.signInWithEmailAndPassword(usuario, password).then((respuesta) => {
+
+
+      if (respuesta.user?.email == usuario) 
+      {
+        
+        this.router.navigate(['/administracion'])
+      }
+
+
+      this.loading = false;
+    }, error => {
+      this.loading = false;
+     // console.log(error)
+      this.toastr.warning(this._errorService.error(error.code), 'Error')
+      this.loginInicioForm.reset();
+
+    }
+    )
+    
+
+
+  /*  if ((usuario == user?.email) && (user !== null)) 
+    {
 
       this.router.navigate(['/administracion'])
     }
-    else {
-      // this.toastr.warning('Intente de nuevo!', 'Usuario Invalido!');
-      this.loginInicioForm.reset();
-    }
+*/
+
 
   }
+
+
+  
 
 
 
@@ -104,7 +139,16 @@ export class LoginInicioComponent implements OnInit {
     this.afAuth.signInWithEmailAndPassword(usuario, password).then((respuesta) => {
       console.log(respuesta.user?.displayName);
 
+      if (respuesta.user?.emailVerified ==   this.afAuth.signInWithEmailAndPassword(usuario, password).then((respuesta) => {
+      console.log(respuesta.user?.displayName);
+
       if (respuesta.user?.emailVerified == false) {
+        this.router.navigate(['/catalogo-producto'])
+      }
+
+
+      this.loading = false;
+    }false) {
         this.router.navigate(['/catalogo-producto'])
       }
 
