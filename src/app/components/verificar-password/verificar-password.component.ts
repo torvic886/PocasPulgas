@@ -37,7 +37,7 @@ export class VerificarPasswordComponent implements OnInit
     this.loading = true;
     this.afAuth.sendPasswordResetEmail(correo).then (() =>{
       this.toastr.info('Enviamos un correo electronico para restablecer su password','Restablecer password');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login-inicio']);
     } ).catch(error => 
       {
         this.loading = false;

@@ -1,22 +1,22 @@
 <div class="container" style="filter:alpha(opacity=50); opacity:0.8;">
   <div class="card">
     <div class="card-body">
-      <span class="h3">Listado De Mascotas</span>
+      <span class="h3" style="margin-right: 75px;">Listado De Mascotas</span>
       <img class="img-fluid" src='./assets/Imagenes/iconoMascotas.jpg' />
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-bottom: 3px">
         <button type="text" class="btn btn-outline-primary btn-lg btn-space"
           routerLink='/administracion'>Volver</button>
         <button class="btn btn-outline-dark btn-lg" routerLink='/create-mascota'>Agregar</button>
       </div>
       <h5 style="margin-top: 30px;" *ngIf="mascotas.length == 0">No Hay Datos Para Mostrar</h5>
-      <table *ngIf='mascotas.length > 0' class="table table-striped mt-5">
+      <table *ngIf='mascotas.length > 0' class="table table-bordered" style="border: 1px;">
         <thead>
           <tr>
-            <th style="width:10px">Nombre</th>
-            <th style="width:20px">Tipo</th>
-            <th style="width:20px">Color</th>
-            <th style="width:20px">fecha Nacimiento</th>
-            <th style="width:20px">Editar/Eliminar</th>
+            <th style="width:2px; color: rgb(255, 255, 255);">Nombre</th>
+            <th style="width:20px; color: rgb(255, 255, 255);">Tipo</th>
+            <th style="width:20px; color: rgb(255, 255, 255);">Color</th>
+            <th style="width:20px; color: rgb(255, 255, 255);">fecha Nacimiento</th>
+            <th style="width:5px; color: rgb(255, 255, 255);">Editar/Eliminar</th>
           </tr>
         </thead>
         <tbody>

@@ -1,10 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorService } from 'src/app/services/error.service';
 import { getAuth } from "firebase/auth";
+import { LoginInicioComponent } from '../login-inicio/login-inicio.component';
 
 @Component({
   selector: 'app-catalogo-producto',
@@ -13,10 +14,12 @@ import { getAuth } from "firebase/auth";
 })
 export class CatalogoProductoComponent implements OnInit 
 {
+
+
+  @ViewChild(LoginInicioComponent) child: LoginInicioComponent;
+
   loading = false;
  
-  
-
   constructor(private afAuth: AngularFireAuth,
     private fb: FormBuilder,
     private router: Router,
@@ -27,15 +30,16 @@ export class CatalogoProductoComponent implements OnInit
 
   ngOnInit(): void 
   {
-  }
-
-
-  clickAddTodo() 
-  {
-    const auth = getAuth().currentUser?.email;
-   // const a = this.auth;
-    console.log('email:',auth);
-
     
   }
+
+  saludo()
+  {
+    console.log('POKM:',this.child.saludo);
+    //this.child.viewCliente();
+  }
+
+
+
+
 }
