@@ -9,8 +9,7 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
   templateUrl: './create-cliente.component.html',
   styleUrls: ['./create-cliente.component.css']
 })
-export class CreateClienteComponent implements OnInit 
-{
+export class CreateClienteComponent implements OnInit {
   createCliente: FormGroup;
   submitted = false;
   loading = false;
@@ -21,68 +20,68 @@ export class CreateClienteComponent implements OnInit
     private clienteService: EmpleadoService,
     private router: Router,
     private toastr: ToastrService,
-    private aRoute: ActivatedRoute)
-    {
+    private aRoute: ActivatedRoute) {
     this.createCliente = this.fb.group(
       {
-      
-      nombre: ['', Validators.required],
-      documento: ['', Validators.required],
-      direccion: ['', Validators.required],
-      correo: ['', Validators.required],
-      password: ['', Validators.required]
-    })
+        nombre: ['', Validators.required],
+        documento: ['', Validators.required],
+        direccion: ['', Validators.required],
+        correo: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        repetirPassword: ['']
+      }, { validator: this.checkPassword })
+
     this.id = this.aRoute.snapshot.paramMap.get('id');
     console.log(this.id)
   }
 
-  ngOnInit(): void 
-  {
+  ngOnInit(): void {
     this.isEditar();
   }
 
-  agregarEditarCliente() 
-  {
+  agregarEditarCliente() {
     this.submitted = true;
 
-    if (this.createCliente.invalid) 
-    {
+    if (this.createCliente.invalid) {
       return;
     }
 
-    if (this.id === null)
-    {
+    if (this.id === null) {
       this.agregarCliente();
-    } 
-    else 
-    {
+    }
+    else {
       this.editarCliente(this.id);
     }
 
   }
 
-  agregarCliente()
+  checkPassword(group: FormGroup): any 
   {
+    const pass = group.controls.password?.value;
+    const confirmPassword = group.controls.repetirPassword?.value;
+    return pass === confirmPassword ? null :
+      { notSame: true }
+  }
+
+  agregarCliente() {
     this.titulo = 'Agregar Cliente';
-    const cliente: any = 
+    const cliente: any =
     {
-      nombre : this.createCliente.value.nombre,
+      nombre: this.createCliente.value.nombre,
       documento: this.createCliente.value.documento,
       direccion: this.createCliente.value.direccion,
       correo: this.createCliente.value.correo,
       password: this.createCliente.value.password,
-      fechaCreacion : new Date(),
+      fechaCreacion: new Date(),
       fechaActualizacion: new Date()
     }
     this.loading = true;
-    this.clienteService.agregarCliente(cliente).then(() => 
-    {
+    this.clienteService.agregarCliente(cliente).then(() => {
       this.toastr.success('El Cliente se registro con exito!', 'Cliente Registrado', { positionClass: 'toast-bottom-right' });
       this.loading = false;
       this.router.navigate(['/list-cliente']);
 
-    }).catch(error => 
-      {
+    }).catch(error => {
       console.log(error);
       this.loading = false;
     })
@@ -91,9 +90,8 @@ export class CreateClienteComponent implements OnInit
 
   }
 
-  editarCliente(id: string)
-  {
-    const cliente: any = 
+  editarCliente(id: string) {
+    const cliente: any =
     {
       nombre: this.createCliente.value.nombre,
       documento: this.createCliente.value.documento,
@@ -105,37 +103,33 @@ export class CreateClienteComponent implements OnInit
 
 
     this.loading = true;
-    this.clienteService.actualizarCliente(id,cliente).then(()=>
-    {
+    this.clienteService.actualizarCliente(id, cliente).then(() => {
       this.loading = false;
-      this.toastr.info('El Cliente fue modificado con exito', 'Cliente modificado!', 
-      {
-        positionClass: 'toast-bottom-right'
-      })
+      this.toastr.info('El Cliente fue modificado con exito', 'Cliente modificado!',
+        {
+          positionClass: 'toast-bottom-right'
+        })
       this.router.navigate(['/list-cliente']);
     });
   }
 
-  isEditar() 
-  {
-    console.log('id: '+this.id)
-    if (this.id !== null)
-    {
+  isEditar() {
+    console.log('id: ' + this.id)
+    if (this.id !== null) {
       this.titulo = 'Editar Cliente';
       this.loading = true;
-      this.clienteService.getCliente_(this.id).subscribe(data => 
-      {
+      this.clienteService.getCliente_(this.id).subscribe(data => {
         this.loading = false;
-       
+
         this.createCliente.setValue(
           {
-          nombre: data.payload.data()['nombre'],
-          documento: data.payload.data()['documento'],
-          direccion: data.payload.data()['direccion'],
-          correo: data.payload.data()['correo'],
-          password: data.payload.data()['password']
+            nombre: data.payload.data()['nombre'],
+            documento: data.payload.data()['documento'],
+            direccion: data.payload.data()['direccion'],
+            correo: data.payload.data()['correo'],
+            password: data.payload.data()['password']
 
-        })
+          })
       })
     }
   }

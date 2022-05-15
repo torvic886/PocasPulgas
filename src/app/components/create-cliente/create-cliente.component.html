@@ -1,45 +1,72 @@
 <div class="container pt-4" style="filter:alpha(opacity=50); opacity:0.6;">
-    <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-            <div class="card text-center">
-                <div class=" card-body">
-                    <h3>{{titulo}}
-                        <div *ngIf="loading" class="spinner-border float-right" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                    </h3>
-                    <span *ngIf="submitted && createCliente.invalid">Todos los campos son obligatorios</span>
-                    <form class="mt-4" [formGroup]="createCliente" (ngSubmit)="agregarEditarCliente()">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control form-control-lg" formControlName="nombre"
-                                    placeholder="Nombre">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card text-center">
+                    <div class=" card-body">
+                        <h3>{{titulo}}
+                            <div *ngIf="loading" class="spinner-border float-right" role="status">
+                                <span class="sr-only">Loading...</span>
                             </div>
-                            <div class="col">
-                                <input type="text" class="form-control form-control-lg" formControlName="documento"
-                                    placeholder="documento">
+                        </h3>
+                        <span *ngIf="submitted && createCliente.invalid">Todos los campos son obligatorios</span>
+                        <form class="mt-4" [formGroup]="createCliente" (ngSubmit)="agregarEditarCliente()">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" formControlName="nombre"
+                                        placeholder="Nombre">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" formControlName="documento"
+                                        placeholder="documento">
+                                </div>
                             </div>
-                        </div>
 
-                        <input type="text" class="form-control form-control-lg mt-3" formControlName="direccion"
-                            placeholder="direccion">
+                            <input type="text" class="form-control form-control-lg mt-3" formControlName="direccion"
+                                placeholder="direccion">
 
 
-                        <input type="text" class="form-control form-control-lg mt-3" formControlName="correo"
-                            placeholder="correo">
+                                <div class="mb-3" style="margin-top: 15px">
+                                    <input type="text" class="form-control form-control-lg" formControlName="correo"
+                                        placeholder="Correo" />
+                                    <span class="text-danger"
+                                        *ngIf="createCliente.get('correo')?.hasError('required') && createCliente.get('correo')?.touched">
+                                        El Correo <strong>Es requerido</strong>
+                                    </span>
+                                    <span class="text-danger"
+                                        *ngIf="createCliente.get('correo')?.hasError('email') && createCliente.get('correo')?.touched">
+                                        El Correo <strong>Es invalido</strong>
+                                    </span>
+                                </div>
 
-                            <input type="text" class="form-control form-control-lg mt-3" formControlName="password"
-                            placeholder="password">    
+                            <div class="mb-3">
+                                <input type="password" class="form-control form-control-lg" formControlName="password"
+                                    placeholder="Password" />
+                                <span class="text-danger"
+                                    *ngIf="createCliente.get('password')?.hasError('required') && createCliente.get('password')?.touched">
+                                    El Password <strong>Es requerido</strong>
+                                </span>
+                                <span class="text-danger"
+                                    *ngIf="createCliente.get('password')?.hasError('minlength') && createCliente.get('password')?.touched">
+                                    El Password como minimo <strong>debe tener 6 caracteres</strong>
+                                </span>
+                            </div>
 
-                        <div class="mt-3">
-                            <button type="text" class="btn btn-secondary btn-lg btn-space"
-                                routerLink='/list-cliente'>Volver</button>
-                            <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
-                        </div>
-                    </form>
-                </div>
+                            <div class="mb-3">
+                                <input type="password" formControlName="repetirPassword"
+                                    class="form-control form-control-lg" placeholder="Repetir Contraseña">
+                                <span class="text-danger" *ngIf="createCliente.hasError('notSame')">
+                                    Contraseñas <strong>distintas</strong>
+                                </span>
+                            </div>
 
+                            <div class="mt-3">
+                                <button type="text" class="btn btn-secondary btn-lg btn-space"
+                                    routerLink='/list-cliente'>Volver</button>
+                                <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
+                            </div>
+                        </form>    
+                    </div>
+               </div>
             </div>
         </div>
-    </div>
 </div>

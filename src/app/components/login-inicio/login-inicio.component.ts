@@ -115,7 +115,7 @@ export class LoginInicioComponent implements OnInit {
         //        console.log('???P',this.empleados[0].password);
         if (usuario == this.empleados[0].correo && password == this.empleados[0].password) 
         {
-          //         console.log('ENTRA');
+
           this.router.navigate(['/catalogo-producto']);
         }
         else 

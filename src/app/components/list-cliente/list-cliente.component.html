@@ -15,7 +15,6 @@
             <th>Documento</th>
             <th>Direccion</th>
             <th>Correo</th>
-            <th>Password</th>
             <th>Editar/Eliminar</th>
             <th></th>
           </tr>
@@ -26,7 +25,6 @@
             <td>{{cliente.documento}}</td>
             <td>{{cliente.direccion}}</td>
             <td>{{cliente.correo}}</td>
-            <td>{{cliente.password}}</td>
             <td>
               <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editCliente/', cliente.id]"></i>
 
