@@ -65,11 +65,12 @@ export class LoginInicioComponent implements OnInit {
     this.mensaje = 'value';
   }
 
-  viewCliente() {
+/*  viewCliente() 
+  {
     let dataleible: any = [];
     const lect = this.afs.collection('clientes').get().toPromise();
     return lect.then(resp => {
-      const document = resp.docs;
+      const document = resp?.docs
       for (let object of document) {
         let datos = new Cliente();
         //  console.log('datos',datos);
@@ -90,7 +91,7 @@ export class LoginInicioComponent implements OnInit {
       console.log(error);
     })
     console.log('document:', document);
-  }
+  }*/
 
 
   login() 

@@ -3,12 +3,12 @@
     <div class="card-body">
       <span class="h3" style="margin-right: 75px;">Listado De Empleados</span>
       <img class="img-fluid" src='./assets/Imagenes/empleados.png'/>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-bottom: 3px">
         <button type="text" class="btn btn-outline-primary btn-lg btn-space" routerLink='/administracion'>Volver</button>
         <button class="btn btn-outline-dark btn-lg" routerLink='/create-empleado'>Agregar</button>
       </div>
       <h5 style="margin-top: 30px;" *ngIf="empleados.length == 0">No Hay Datos Para Mostrar</h5>
-      <table *ngIf='empleados.length > 0' class="table table-striped mt-5">
+      <table *ngIf='empleados.length > 0' class="table table-bordered">
         <thead>
           <tr>
             <th>Nombre</th>
@@ -16,7 +16,6 @@
             <th>Documento</th>
             <th>Salario</th>
             <th>Editar/Eliminar</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>

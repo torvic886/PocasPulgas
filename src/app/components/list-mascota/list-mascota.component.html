@@ -12,11 +12,11 @@
       <table *ngIf='mascotas.length > 0' class="table table-bordered" style="border: 1px;">
         <thead>
           <tr>
-            <th style="width:2px; color: rgb(255, 255, 255);">Nombre</th>
-            <th style="width:20px; color: rgb(255, 255, 255);">Tipo</th>
-            <th style="width:20px; color: rgb(255, 255, 255);">Color</th>
-            <th style="width:20px; color: rgb(255, 255, 255);">fecha Nacimiento</th>
-            <th style="width:5px; color: rgb(255, 255, 255);">Editar/Eliminar</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Color</th>
+            <th>fecha Nacimiento</th>
+            <th>Editar/Eliminar</th>
           </tr>
         </thead>
         <tbody>
@@ -27,7 +27,6 @@
             <td>{{mascota.fechaNacimiento}}</td>
             <td>
               <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/editMascota/', mascota.id]"></i>
-
               <i (click)="eliminarMascota(mascota.id)" class="fas fa-trash-alt fa-lg text-danger"></i>
             </td>
 
