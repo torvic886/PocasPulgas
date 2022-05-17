@@ -36,7 +36,7 @@ export class ListMascotaComponent implements OnInit
          }
        )
       });
-      console.log(this.mascotas);
+      //console.log(this.mascotas);
     })
   }
 

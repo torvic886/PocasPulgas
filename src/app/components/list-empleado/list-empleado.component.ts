@@ -38,7 +38,7 @@ export class ListEmpleadoComponent implements OnInit
          }
        )
       });
-      console.log(this.empleados);
+     // console.log(this.empleados);
     })
   }
 

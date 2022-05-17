@@ -36,7 +36,7 @@ export class ListProductoComponent implements OnInit
          }
        )
       });
-      console.log(this.productos);
+     // console.log(this.productos);
     })
   }
 

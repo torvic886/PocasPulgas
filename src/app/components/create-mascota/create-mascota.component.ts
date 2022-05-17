@@ -30,7 +30,7 @@ export class CreateMascotaComponent implements OnInit
       fechaNacimiento: ['', Validators.required]
     })
     this.id = this.aRoute.snapshot.paramMap.get('id');
-    console.log(this.id)
+   // console.log(this.id)
   }
 
   ngOnInit(): void 
@@ -78,11 +78,11 @@ export class CreateMascotaComponent implements OnInit
       this.router.navigate(['/list-mascota']);
 
     }).catch(error => {
-      console.log(error);
+     // console.log(error);
       this.loading = false;
     })
 
-    console.log(mascota);
+    //console.log(mascota);
 
   }
 
@@ -118,7 +118,7 @@ export class CreateMascotaComponent implements OnInit
       {
         
         this.loading = false;
-        console.log(data.payload.data()['nombre']);
+        //console.log(data.payload.data()['nombre']);
         this.createMascota.setValue({
           nombre: data.payload.data()['nombre'],
           tipo: data.payload.data()['tipo'],

@@ -35,7 +35,7 @@ export class CreateArticuloComponent implements OnInit {
       imagen: ['', Validators.required]
     })
     this.id = this.aRoute.snapshot.paramMap.get('id');
-    console.log(this.id)
+   // console.log(this.id)
   }
 
   ngOnInit(): void 
@@ -88,11 +88,11 @@ export class CreateArticuloComponent implements OnInit {
 
     }).catch(error => 
       {
-      console.log(error);
+     // console.log(error);
       this.loading = false;
     })
 
-    console.log(articulo);
+    //console.log(articulo);
     
 
 
@@ -127,7 +127,7 @@ export class CreateArticuloComponent implements OnInit {
 
   isEditar() 
   {
-    console.log('id: '+this.id)
+    //console.log('id: '+this.id)
     if (this.id !== null)
     {
       this.titulo = 'Editar Articulo';

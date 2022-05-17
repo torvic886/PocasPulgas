@@ -1,7 +1,8 @@
-<div class="container pt-4" style="filter:alpha(opacity=50); opacity:0.6;">
+<section class="vh-100 gradient-custom">
+<div class="container pt-4" style="filter:alpha(opacity=50);">
     <div class="row">
         <div class="col-lg-6 offset-lg-3">
-            <div class="card text-center">
+            <div class="card text-center bg-dark text-white" style="border-radius: 1rem;">
                 <div class=" card-body">
                     <h3>{{titulo}}
                         <div *ngIf="loading" class="spinner-border float-right" role="status">
@@ -29,9 +30,9 @@
                             placeholder="Fecha Nacimiento">
 
                         <div class="mt-3">
-                            <button type="text" class="btn btn-secondary btn-lg btn-space"
+                            <button type="button" class="btn btn-secondary btn-lg btn-space"
                                 routerLink='/list-mascota'>Volver</button>
-                            <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
+                            <button type="button" class="btn btn-outline-light btn-lg">Agregar</button>
                         </div>
                     </form>
                 </div>
@@ -40,3 +41,4 @@
         </div>
     </div>
 </div>
+</section>

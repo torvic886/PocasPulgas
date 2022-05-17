@@ -30,8 +30,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  login() {
-    console.log(this.loginForm)
+  login() 
+  {
+    //console.log(this.loginForm)
 
     console.log('Emailll:',this.afAuth.signInWithEmailAndPassword);
 

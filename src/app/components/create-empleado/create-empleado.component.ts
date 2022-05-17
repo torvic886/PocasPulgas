@@ -31,7 +31,7 @@ export class CreateEmpleadoComponent implements OnInit
       salario: ['', Validators.required]
     })
     this.id = this.aRoute.snapshot.paramMap.get('id');
-    console.log(this.id)
+   // console.log(this.id)
   }
 
   ngOnInit(): void 
@@ -79,11 +79,11 @@ export class CreateEmpleadoComponent implements OnInit
       this.router.navigate(['/list-empleado']);
 
     }).catch(error => {
-      console.log(error);
+     // console.log(error);
       this.loading = false;
     })
 
-    console.log(empleado);
+   // console.log(empleado);
 
   }
 
@@ -119,7 +119,7 @@ export class CreateEmpleadoComponent implements OnInit
       {
         
         this.loading = false;
-        console.log(data.payload.data()['nombre']);
+       // console.log(data.payload.data()['nombre']);
         this.createEmpleado.setValue({
           nombre: data.payload.data()['nombre'],
           apellido: data.payload.data()['apellido'],

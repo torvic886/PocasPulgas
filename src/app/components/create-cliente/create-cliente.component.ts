@@ -28,11 +28,10 @@ export class CreateClienteComponent implements OnInit {
         direccion: ['', Validators.required],
         correo: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
-        repetirPassword: ['']
+        repetirPassword: ['', Validators.required],
       }, { validator: this.checkPassword })
 
     this.id = this.aRoute.snapshot.paramMap.get('id');
-    console.log(this.id)
   }
 
   ngOnInit(): void {
@@ -72,6 +71,7 @@ export class CreateClienteComponent implements OnInit {
       direccion: this.createCliente.value.direccion,
       correo: this.createCliente.value.correo,
       password: this.createCliente.value.password,
+      repetirPassword: this.createCliente.value.password,
       fechaCreacion: new Date(),
       fechaActualizacion: new Date()
     }
@@ -82,12 +82,8 @@ export class CreateClienteComponent implements OnInit {
       this.router.navigate(['/list-cliente']);
 
     }).catch(error => {
-      console.log(error);
       this.loading = false;
     })
-
-    console.log(cliente);
-
   }
 
   editarCliente(id: string) {
@@ -98,6 +94,7 @@ export class CreateClienteComponent implements OnInit {
       direccion: this.createCliente.value.direccion,
       correo: this.createCliente.value.correo,
       password: this.createCliente.value.password,
+      repetirPassword: this.createCliente.value.password,
       fechaActualizacion: new Date()
     }
 
@@ -113,25 +110,26 @@ export class CreateClienteComponent implements OnInit {
     });
   }
 
-  isEditar() {
-    console.log('id: ' + this.id)
-    if (this.id !== null) {
+  isEditar() 
+  {
+    if (this.id !== null) 
+    {
       this.titulo = 'Editar Cliente';
       this.loading = true;
-      this.clienteService.getCliente_(this.id).subscribe(data => {
+      this.clienteService.getCliente_(this.id).subscribe(data => 
+        {
         this.loading = false;
 
         this.createCliente.setValue(
-          {
+        {
             nombre: data.payload.data()['nombre'],
             documento: data.payload.data()['documento'],
             direccion: data.payload.data()['direccion'],
             correo: data.payload.data()['correo'],
-            password: data.payload.data()['password']
-
-          })
+            password: data.payload.data()['password'],
+            repetirPassword: data.payload.data()['password']
+        })
       })
     }
   }
-
 }

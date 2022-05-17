@@ -37,7 +37,6 @@ export class ListClienteComponent implements OnInit
          }
        )
       });
-      console.log(this.clientes);
     })
   }
 
@@ -51,7 +50,7 @@ export class ListClienteComponent implements OnInit
 positionClass: 'toast-bottom-right'
       });
     }).catch(error =>{
-      console.log('error');
+    //  console.log('error');
     })
   }
 }

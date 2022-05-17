@@ -37,7 +37,7 @@ export class ListArticuloComponent implements OnInit
          }
        )
       });
-      console.log(this.articulos);
+     // console.log(this.articulos);
     })
   }
 
@@ -51,7 +51,7 @@ export class ListArticuloComponent implements OnInit
 positionClass: 'toast-bottom-right'
       });
     }).catch(error =>{
-      console.log('error');
+     // console.log('error');
     })
   }
 

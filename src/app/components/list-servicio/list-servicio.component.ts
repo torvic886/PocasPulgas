@@ -36,7 +36,7 @@ export class ListServicioComponent implements OnInit {
          }
        )
       });
-      console.log(this.servicios);
+     // console.log(this.servicios);
     })
   }
 
