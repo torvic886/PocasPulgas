@@ -4,7 +4,7 @@
 
 export const environment = {
  
-  production: false,
+  production: true,
   firebase: {
     apiKey: "AIzaSyDMvp5O-uGBKHQNSo2XBv4gImsIFvoca4I",
     authDomain: "quizz-975f6.firebaseapp.com",
