@@ -22,86 +22,68 @@ export class CreateArticuloComponent implements OnInit {
     private articuloService: EmpleadoService,
     private router: Router,
     private toastr: ToastrService,
-    private aRoute: ActivatedRoute)
-    {
+    private aRoute: ActivatedRoute) {
     this.createArticulo = this.fb.group(
     {
-      
-      nombre: ['', Validators.required],
-      precio: ['', Validators.required],
-      descripcion: ['', Validators.required],
-      cantidad: ['', Validators.required],
-      tipo: ['', Validators.required],
-      imagen: ['', Validators.required]
+        nombre: ['', Validators.required],
+        precio: ['', Validators.required],
+        descripcion: ['', Validators.required],
+        cantidad: ['', Validators.required],
+        tipo: ['', Validators.required],
+        imagen: ['', Validators.required]
     })
     this.id = this.aRoute.snapshot.paramMap.get('id');
-   // console.log(this.id)
+    // console.log(this.id)
   }
 
-  ngOnInit(): void 
-  {
+  ngOnInit(): void {
     this.isEditar();
   }
 
-  agregarEditarArticulo() 
-  {
+  agregarEditarArticulo() {
     this.submitted = true;
 
-    if (this.createArticulo.invalid) 
-    {
+    if (this.createArticulo.invalid) {
       return;
     }
 
-    if (this.id === null)
-    {
+    if (this.id === null) {
       this.agregarArticulo();
-    } 
-    else 
-    {
+    }
+    else {
       this.editarArticulo(this.id);
     }
-
+    
   }
 
-  agregarArticulo()
-  {
+  agregarArticulo() {
     this.titulo = 'Agregar Articulo';
-    const articulo: any = 
+    const articulo: any =
     {
-      nombre : this.createArticulo.value.nombre,
+      nombre: this.createArticulo.value.nombre,
       precio: this.createArticulo.value.precio,
       descripcion: this.createArticulo.value.descripcion,
       cantidad: this.createArticulo.value.cantidad,
       tipo: this.createArticulo.value.tipo,
       imagen: this.createArticulo.value.imagen,
-      fechaCreacion : new Date(),
+      fechaCreacion: new Date(),
       fechaActualizacion: new Date()
     }
     this.loading = true;
 
-    this.articuloService.agregarArticulo(articulo).then(() => 
-    {
+    this.articuloService.agregarArticulo(articulo).then(() => {
       this.toastr.success('El Articulo se registro con exito!', 'Articulo Registrado', { positionClass: 'toast-bottom-right' });
       this.loading = false;
       this.router.navigate(['/list-articulo']);
-      
 
-    }).catch(error => 
-      {
-     // console.log(error);
+    }).catch(error => {
+      // console.log(error);
       this.loading = false;
     })
-
-    //console.log(articulo);
-    
-
-
   }
 
-
-  editarArticulo(id: string)
-  {
-    const articulo: any = 
+  editarArticulo(id: string) {
+    const articulo: any =
     {
       nombre: this.createArticulo.value.nombre,
       precio: this.createArticulo.value.precio,
@@ -111,44 +93,37 @@ export class CreateArticuloComponent implements OnInit {
       imagen: this.createArticulo.value.imagen,
       fechaActualizacion: new Date()
     }
-    
 
     this.loading = true;
-    this.articuloService.actualizarArticulo(id,articulo).then(()=>
-    {
+    this.articuloService.actualizarArticulo(id, articulo).then(() => {
       this.loading = false;
-      this.toastr.info('El Articulo fue modificado con exito', 'Articulo modificado!', 
-      {
-        positionClass: 'toast-bottom-right'
-      })
+      this.toastr.info('El Articulo fue modificado con exito', 'Articulo modificado!',
+        {
+          positionClass: 'toast-bottom-right'
+        })
       this.router.navigate(['/list-articulo']);
     });
   }
 
-  isEditar() 
-  {
+  isEditar() {
     //console.log('id: '+this.id)
-    if (this.id !== null)
-    {
+    if (this.id !== null) {
       this.titulo = 'Editar Articulo';
       this.loading = true;
-      this.articuloService.getArticulo_(this.id).subscribe(data => 
-      {
-        
+      this.articuloService.getArticulo_(this.id).subscribe(data => {
+
         this.loading = false;
-       
+
         this.createArticulo.setValue(
           {
-          nombre: data.payload.data()['nombre'],
-          precio: data.payload.data()['precio'],
-          descripcion: data.payload.data()['descripcion'],
-          cantidad: data.payload.data()['cantidad'],
-          tipo: data.payload.data()['tipo'],
-          imagen: data.payload.data()['imagen']
-
-        })
+            nombre: data.payload.data()['nombre'],
+            precio: data.payload.data()['precio'],
+            descripcion: data.payload.data()['descripcion'],
+            cantidad: data.payload.data()['cantidad'],
+            tipo: data.payload.data()['tipo'],
+            imagen: data.payload.data()['imagen']
+          })
       })
     }
   }
-
 }

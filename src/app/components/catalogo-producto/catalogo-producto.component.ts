@@ -33,11 +33,11 @@ export class CatalogoProductoComponent implements OnInit
     
   }
 
-  saludo()
+/*   saludo()
   {
     console.log('POKM:',this.child.saludo);
     //this.child.viewCliente();
-  }
+  } */
 
 
 

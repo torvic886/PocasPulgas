@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AppModule } from 'src/app/app.module';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
   templateUrl: './create-cliente.component.html',
   styleUrls: ['./create-cliente.component.css']
 })
+/* @Injectable({ providedIn: AppModule}) */
 export class CreateClienteComponent implements OnInit {
   createCliente: FormGroup;
   submitted = false;

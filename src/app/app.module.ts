@@ -1,33 +1,22 @@
 import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAnalytics, getAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
-import { provideAuth, getAuth } from '@angular/fire/auth';
-import { provideDatabase, getDatabase } from '@angular/fire/database';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { provideFunctions, getFunctions } from '@angular/fire/functions';
-import { provideMessaging, getMessaging } from '@angular/fire/messaging';
-import { providePerformance, getPerformance } from '@angular/fire/performance';
-import { provideRemoteConfig, getRemoteConfig } from '@angular/fire/remote-config';
-import { provideStorage, getStorage } from '@angular/fire/storage';
+import { ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import { CreateEmpleadoComponent } from './components/create-empleado/create-empleado.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListEmpleadoComponent } from './components/list-empleado/list-empleado.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CatalogoProductoComponent } from './components/catalogo-producto/catalogo-producto.component';
-import { LoginComponent } from './components/login/login.component';
+//import { LoginComponent } from './components/login/login.component';
 import { VerificarPasswordComponent } from './components/verificar-password/verificar-password.component';
-import { RegisterComponent } from './components/register/register.component';
+//import { RegisterComponent } from './components/register/register.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ListClienteComponent } from './components/list-cliente/list-cliente.component';
 import { CreateClienteComponent } from './components/create-cliente/create-cliente.component';
@@ -44,18 +33,22 @@ import { CreateServicioComponent } from './components/create-servicio/create-ser
 import { ListServicioComponent } from './components/list-servicio/list-servicio.component';
 import { CreateArticuloComponent } from './components/create-articulo/create-articulo.component';
 import { ListArticuloComponent } from './components/list-articulo/list-articulo.component';
+import { FormBuilder } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { EmpleadoService } from './services/empleado.service';
+import { provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp } from 'firebase/app';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     CreateEmpleadoComponent,
     NavbarComponent,
     ListEmpleadoComponent,
     CatalogoProductoComponent,
-    LoginComponent,
     VerificarPasswordComponent,
-    RegisterComponent,
     SpinnerComponent,
     ListClienteComponent,
     CreateClienteComponent,
@@ -72,8 +65,6 @@ import { ListArticuloComponent } from './components/list-articulo/list-articulo.
     ListServicioComponent,
     CreateArticuloComponent,
     ListArticuloComponent,
-  
-    
   ],
   imports: [
     BrowserModule,
@@ -84,11 +75,17 @@ import { ListArticuloComponent } from './components/list-articulo/list-articulo.
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ReactiveFormsModule
   ],
   providers: [
-    ScreenTrackingService, UserTrackingService
+    ScreenTrackingService, 
+    UserTrackingService,
+    FormBuilder,
+    EmpleadoService
+    //AngularFirestore
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
