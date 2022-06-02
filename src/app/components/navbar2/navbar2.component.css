@@ -1,4 +1,8 @@
 .container{
-    max-width: 1262px;
+    width: 1473px;
 
+}
+
+.navbar-brand {
+    width: 1473px;  
 }
