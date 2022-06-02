@@ -1,8 +1,3 @@
-.container{
-    width: 1473px;
-
-}
-
 .navbar-brand {
-    width: 1473px;  
+    width: 100vh; 
 }
