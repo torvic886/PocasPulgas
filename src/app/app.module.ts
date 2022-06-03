@@ -71,6 +71,7 @@ import { initializeApp } from 'firebase/app';
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     AngularFireAuthModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),

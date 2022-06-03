@@ -1,3 +1,21 @@
+/* import { TestBed, inject } from '@angular/core/testing';
+
+import { EmpleadoService } from 'src/app/services/empleado.service';
+
+describe('DataService', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [EmpleadoService]
+    });
+  });
+
+  it('should be created', inject([EmpleadoService], (service: EmpleadoService) => {
+    expect(service).toBeTruthy();
+  }));
+});
+
+ */
+
 /* import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
