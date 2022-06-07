@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
@@ -14,9 +13,7 @@ import { ListEmpleadoComponent } from './components/list-empleado/list-empleado.
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CatalogoProductoComponent } from './components/catalogo-producto/catalogo-producto.component';
-//import { LoginComponent } from './components/login/login.component';
 import { VerificarPasswordComponent } from './components/verificar-password/verificar-password.component';
-//import { RegisterComponent } from './components/register/register.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ListClienteComponent } from './components/list-cliente/list-cliente.component';
 import { CreateClienteComponent } from './components/create-cliente/create-cliente.component';
@@ -36,8 +33,6 @@ import { ListArticuloComponent } from './components/list-articulo/list-articulo.
 import { FormBuilder } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EmpleadoService } from './services/empleado.service';
-import { provideFirebaseApp } from '@angular/fire/app';
-import { initializeApp } from 'firebase/app';
 
 
 @NgModule({
@@ -70,8 +65,8 @@ import { initializeApp } from 'firebase/app';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    AngularFireModule,
     AngularFireModule.initializeApp(environment.firebase),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
     AngularFireAuthModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
@@ -83,8 +78,10 @@ import { initializeApp } from 'firebase/app';
     ScreenTrackingService, 
     UserTrackingService,
     FormBuilder,
-    EmpleadoService
-    //AngularFirestore
+    EmpleadoService,
+    AngularFireModule,
+    AngularFirestore
+
   ],
   
   bootstrap: [AppComponent]

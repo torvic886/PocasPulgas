@@ -2,7 +2,7 @@
 
 import { EmpleadoService } from 'src/app/services/empleado.service';
 
-describe('DataService', () => {
+describe('EmpleadoService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [EmpleadoService]
@@ -12,9 +12,9 @@ describe('DataService', () => {
   it('should be created', inject([EmpleadoService], (service: EmpleadoService) => {
     expect(service).toBeTruthy();
   }));
-});
+}); */
 
- */
+
 
 /* import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
