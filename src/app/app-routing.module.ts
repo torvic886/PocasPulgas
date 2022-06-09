@@ -20,6 +20,7 @@ import { CreateServicioComponent } from './components/create-servicio/create-ser
 import { ListServicioComponent } from './components/list-servicio/list-servicio.component';
 import { CreateArticuloComponent } from './components/create-articulo/create-articulo.component';
 import { ListArticuloComponent } from './components/list-articulo/list-articulo.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'catalogo-producto', pathMatch: 'full' },
   {path: 'administracion',component: AdministracionComponent},
   { path: 'list-articulo', component: ListArticuloComponent },
+  { path: 'carrito', component: CarritoComponent },
   { path: 'list-empleado', component: ListEmpleadoComponent },
   {path: 'list-cliente', component: ListClienteComponent},
   {path: 'list-mascota', component: ListMascotaComponent},

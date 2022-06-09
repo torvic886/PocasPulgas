@@ -33,6 +33,7 @@ import { ListArticuloComponent } from './components/list-articulo/list-articulo.
 import { FormBuilder } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EmpleadoService } from './services/empleado.service';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { EmpleadoService } from './services/empleado.service';
     ListServicioComponent,
     CreateArticuloComponent,
     ListArticuloComponent,
+    CarritoComponent,
   ],
   imports: [
     BrowserModule,
