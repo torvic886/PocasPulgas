@@ -61,7 +61,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     ListServicioComponent,
     CreateArticuloComponent,
     ListArticuloComponent,
-    CarritoComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
