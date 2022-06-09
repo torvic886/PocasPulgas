@@ -1,0 +1,193 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item">
+                    <a class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Categoria <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Articulo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/registerUser">Registrarse</a>
+                </li>
+
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                        placeholder="Buscar...">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-secondary btn-number">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <a class="btn btn-success btn-sm ml-3" routerLink="/login-inicio">
+                            <i></i> Sign Up
+                            <span class="fa fa-user-plus" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+                <a class="btn btn-success btn-sm ml-3">
+                    <i class="fa fa-shopping-cart"></i> Carro
+                    <span class="badge badge-light"></span>
+                </a>
+                <ul class="navbar-nav m-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link"></a>
+                    </li>
+                </ul>
+
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr style="background-color: rgb(255, 255, 255)">
+                            <th scope="col"> </th>
+                            <th scope="col"><font color="black">Productos</font></th>
+                            <th scope="col"><font color="black">Disponibilidad</font></th>
+                            <th scope="col" class="text-center"><font color="black">Cantidad</font></th>
+                            <th scope="col" class="text-right"><font color="black">Precio</font></th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: rgb(242, 242, 242)">
+                            <td><img src='./assets/Imagenes/Alergodex1.png' /> </td>
+                            <td> <font color="black">Alergodex</font></td>
+                            <td><font color="black">In stock</font></td>
+                            <td><input class="form-control" type="text" value="1" style="text-align: center" /></td>
+                            <td class="text-right"><font color="black">$ 23.000</font></td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>
+                                </button> </td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255)">
+                            <td><img src='./assets/Imagenes/Ciprofloxacina-250mg1.png' /> </td>
+                            <td><font color="black">Ciprofloxacina-250mg</font></td>
+                            <td><font color="black">In stock</font></td>
+                            <td><input class="form-control" type="text" value="1" style="text-align: center" /></td>
+                            <td class="text-right"><font color="black">$ 34.000</font></td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>
+                                </button> </td>
+                        </tr>
+                        <tr style="background-color: rgb(242, 242, 242)">
+                            <td><img src='./assets/Imagenes/Cenit1.png' /> </td>
+                            <td><font color="black">Cenit</font></td>
+                            <td><font color="black">In stock</font></td>
+                            <td><input class="form-control" type="text" value="1" style="text-align: center" /></td>
+                            <td class="text-right"><font color="black">$ 24.900</font></td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>
+                                </button></td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255)">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><font color="black">Sub-Total </font></td>
+                            <td class="text-right"><font color="black">$ 66.012</font></td>
+                        </tr>
+                        <tr style="background-color: rgb(242, 242, 242)">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><font color="black">Iva</font></td>
+                            <td class="text-right"><font color="black">$ 15.888.</font></td>
+                        </tr>
+                        <tr style="background-color: rgb(255, 255, 255)">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong><font color="black">Total</font></strong></td>
+                            <td class="text-right"><strong><font color="black">$ 81.900</font></strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <button class="btn btn-lg btn-block btn-primary text-uppercase">Continue Comprando</button>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-4 col-xl-3">
+                <h5>About</h5>
+                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                <p class="mb-0">
+                    Estamos comprometidos con el bienestar de tu
+                    mascota desde nuestro trabajo en la prevención,
+                    el acompañamiento al paciente en su recuperación
+                    y principalmente en la calidad en nuestros
+                    procedimientos médicos de atención veterinaria.
+                </p>
+            </div>
+
+
+
+            <div class="col-md-4 col-lg-3 col-xl-3">
+                <h5>Contact</h5>
+                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-home mr-2"></i> PocasPulgas.</li>
+                    <li><i class="fa fa-envelope mr-2"></i> vagutierrezv@uqvirtual.edu.co</li>
+                    <li><i class="fa fa-phone mr-2"></i> + 301 312 8934</li>
+                    <li><i class="fa fa-print mr-2"></i> + 304 220 8737</li>
+                    <li><i class="fa fa-facebook-official mr-2" aria-hidden="true"></i> pocaspulgasaxm</li>
+
+                </ul>
+            </div>
+            <div class="col-12 copyright mt-3">
+                <p class="float-left">
+                    <a>Ir Al Inicio</a>
+                </p>
+                <p class="text-right text-muted">Diseñado Por <i class="fa fa-heart"></i> by <a
+                        href="https://t-php.fr/43-theme-ecommerce-bootstrap-4.html"><i>Victor Gutierrez</i></a> |
+                    <span>v. 1.0</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
